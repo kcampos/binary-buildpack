@@ -1,2 +1,2 @@
 #! /bin/sh
-sudo dpkg -s libevent-dev
+dpkg -s libevent-dev

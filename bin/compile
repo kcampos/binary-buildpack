@@ -1,2 +1,9 @@
 #! /bin/sh
-sudo apt-get -y install libevent-dev
+status "Adding libevent library support"
+tar xzf $bp_dir/vendor/libevent.tar.gz -C $build_dir/vendor/
+
+# Update the PATH
+status "Building runtime environment"
+mkdir -p $build_dir/.profile.d
+echo "export PATH=\"\$HOME/vendor/:\$PATH\";" > $build_dir/.profile.d/libevent.sh
+echo "export LD_LIBRARY_PATH=\"\$HOME/vendor/libs/\";" >> $build_dir/.profile.d/libevent.sh
