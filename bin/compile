@@ -1,2 +1,2 @@
 #! /bin/sh
-apt-get -y install libevent-dev
+sudo apt-get -y install libevent-dev
