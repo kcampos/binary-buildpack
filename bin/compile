@@ -3,8 +3,7 @@ build_dir=$1
 cache_dir=$2
 
 status "Adding libevent library support"
-mkdir -p $build_dir/vendor
-tar xzf $cache_dir/vendor/libevent.tar.gz -C $build_dir/vendor/
+tar xzf ./vendor/libevent.tar.gz -C $build_dir/vendor/
 
 # Update the PATH
 status "Building runtime environment"
