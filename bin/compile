@@ -7,10 +7,15 @@ bp_dir=$(cd $(dirname $0); cd ..; pwd)
 export BUILDPACK_PATH=$bp_dir
 
 echo "Adding libevent library support"
+
+echo "mkdir -p $build_dir/vendor"
+mkdir -p $build_dir/vendor
+
+echo "Running tar xzf $bp_dir/vendor/libevent.tar.gz -C $build_dir/vendor/"
 tar xzf $bp_dir/vendor/libevent.tar.gz -C $build_dir/vendor/
 
 # Update the PATH
 echo "Building runtime environment"
 mkdir -p $build_dir/.profile.d
 echo "export PATH=\"\$HOME/vendor/:\$PATH\";" > $build_dir/.profile.d/libevent.sh
-echo "export LD_LIBRARY_PATH=\"\$HOME/vendor/libs/\";" >> $build_dir/.profile.d/libevent.sh
+echo "export LD_LIBRARY_PATH=\"\$LD_LIBRARY_PATH:\$HOME/vendor/\";" >> $build_dir/.profile.d/libevent.sh
