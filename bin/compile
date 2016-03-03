@@ -19,7 +19,7 @@ ln -s $build_dir/vendor/hiredis-0.13.3 $build_dir/vendor/hiredis
 # Update the PATH
 echo "Building runtime environment"
 mkdir -p $build_dir/.profile.d
-echo "export PATH=\"\$HOME/vendor/libevent-2.0.22-stable/:\$PATH\";" > $build_dir/.profile.d/libevent.sh
-echo "export LD_LIBRARY_PATH=\"\$LD_LIBRARY_PATH:\$HOME/vendor/libevent-2.0.22-stable/::\$HOME/vendor/libevent-2.0.22-stable/include\";" >> $build_dir/.profile.d/libevent.sh
-echo "export LDFLAGS=\"-L\$HOME/vendor/libevent-2.0.22-stable -L\$HOME/vendor/libevent-2.0.22-stable/include\"" >> $build_dir/.profile.d/libevent.sh
-echo "export CFLAGS=\"-I\$HOME/vendor/libevent-2.0.22-stable -I\$HOME/vendor/libevent-2.0.22-stable/include\"" >> $build_dir/.profile.d/libevent.sh
+echo "export PATH=\"\$HOME/vendor:\$HOME/vendor/libevent-2.0.22-stable/:\$PATH\";" > $build_dir/.profile.d/libevent.sh
+echo "export LD_LIBRARY_PATH=\"\$LD_LIBRARY_PATH:\$HOME/vendor:\$HOME/vendor/libevent-2.0.22-stable/::\$HOME/vendor/libevent-2.0.22-stable/include\";" >> $build_dir/.profile.d/libevent.sh
+echo "export LDFLAGS=\"-L\$HOME/vendor/libevent-2.0.22-stable -L\$HOME/vendor/libevent-2.0.22-stable/include -L\$HOME/vendor\"" >> $build_dir/.profile.d/libevent.sh
+echo "export CFLAGS=\"-I\$HOME/vendor/libevent-2.0.22-stable -I\$HOME/vendor/libevent-2.0.22-stable/include -I\$HOME/vendor\"" >> $build_dir/.profile.d/libevent.sh
