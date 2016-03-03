@@ -16,6 +16,9 @@ tar xzf $bp_dir/vendor/libevent-2.0.22-stable.tar.gz -C $build_dir/vendor/
 tar xzf $bp_dir/vendor/hiredis-0.13.3.tar.gz -C $build_dir/vendor/
 ln -s $build_dir/vendor/hiredis-0.13.3 $build_dir/vendor/hiredis
 
+echo "> ls $build_dir/vendor/hiredis"
+ls $build_dir/vendor/hiredis
+
 # Update the PATH
 echo "Building runtime environment"
 mkdir -p $build_dir/.profile.d
