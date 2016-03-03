@@ -1,9 +1,18 @@
 #! /bin/sh
 build_dir=$1
 cache_dir=$2
+env_dir=$3
+bp_dir=$(cd $(dirname $0); cd ..; pwd)
+
+# CF Common
+export BUILDPACK_PATH=$bp_dir
+source $bp_dir/compile-extensions/lib/common
+
+# Load some convenience functions like status(), echo(), and indent()
+source $bp_dir/bin/common.sh
 
 status "Adding libevent library support"
-tar xzf ./vendor/libevent.tar.gz -C $build_dir/vendor/
+tar xzf $bp_dir/vendor/libevent.tar.gz -C $build_dir/vendor/
 
 # Update the PATH
 status "Building runtime environment"
