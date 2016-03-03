@@ -1,6 +1,8 @@
 #! /bin/sh
+build_dir=$1
+
 status "Adding libevent library support"
-tar xzf $bp_dir/vendor/libevent.tar.gz -C $build_dir/vendor/
+tar xzf $build_dir/vendor/libevent.tar.gz -C $build_dir/vendor/
 
 # Update the PATH
 status "Building runtime environment"
