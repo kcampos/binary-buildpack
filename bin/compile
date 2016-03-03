@@ -11,8 +11,8 @@ echo "Adding libevent library support"
 echo "mkdir -p $build_dir/vendor"
 mkdir -p $build_dir/vendor
 
-echo "Running tar xzf $bp_dir/vendor/libevent.tar.gz -C $build_dir/vendor/"
-tar xzf $bp_dir/vendor/libevent.tar.gz -C $build_dir/vendor/
+echo "Running tar xzf $bp_dir/vendor/libevent-2.0.22-stable.tar.gz -C $build_dir/vendor/"
+tar xzf $bp_dir/vendor/libevent-2.0.22-stable.tar.gz -C $build_dir/vendor/
 ls $build_dir/vendor/
 
 # Update the PATH
