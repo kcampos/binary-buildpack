@@ -13,13 +13,13 @@ mkdir -p $build_dir/vendor
 
 echo "Running tar xzf $bp_dir/vendor/libevent-2.0.22-stable.tar.gz -C $build_dir/vendor/"
 tar xzf $bp_dir/vendor/libevent-2.0.22-stable.tar.gz -C $build_dir/vendor/
-ls $build_dir/vendor/
+ls $build_dir/vendor/libevent-2.0.22-stable
 
 # Update the PATH
 echo "Building runtime environment"
 mkdir -p $build_dir/.profile.d
-echo "export PATH=\"\$HOME/vendor/:\$PATH\";" > $build_dir/.profile.d/libevent.sh
-echo "export LD_LIBRARY_PATH=\"\$LD_LIBRARY_PATH:\$HOME/vendor/\";" >> $build_dir/.profile.d/libevent.sh
-echo "export LDFLAGS=\"-L\$HOME/vendor\"" >> $build_dir/.profile.d/libevent.sh
-echo "export CFLAGS=\"-I\$HOME/vendor\"" >> $build_dir/.profile.d/libevent.sh
-echo "LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:\$HOME/vendor/"
+echo "export PATH=\"\$HOME/vendor/libevent-2.0.22-stable/:\$PATH\";" > $build_dir/.profile.d/libevent.sh
+echo "export LD_LIBRARY_PATH=\"\$LD_LIBRARY_PATH:\$HOME/vendor/libevent-2.0.22-stable/\";" >> $build_dir/.profile.d/libevent.sh
+echo "export LDFLAGS=\"-L\$HOME/vendor/libevent-2.0.22-stable\"" >> $build_dir/.profile.d/libevent.sh
+echo "export CFLAGS=\"-I\$HOME/vendor/libevent-2.0.22-stable\"" >> $build_dir/.profile.d/libevent.sh
+echo "LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:\$HOME/vendor/libevent-2.0.22-stable"
