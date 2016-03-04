@@ -20,4 +20,4 @@ echo "Building runtime environment"
 mkdir -p $build_dir/.profile.d
 echo "export PATH=\"\$HOME/vendor:\$PATH\";" > $build_dir/.profile.d/libevent.sh
 echo "export LDFLAGS=\"-levent -pthread\"" >> $build_dir/.profile.d/libevent.sh
-echo "export CFLAGS=\"-I\$HOME/vendor -O0 -ggdb -Wall -Wextra -I. -Ijansson/src -Ihttp-parser\"" >> $build_dir/.profile.d/libevent.sh
+echo "export CFLAGS=\"-I\$build_dir/vendor -O0 -ggdb -Wall -Wextra -I. -Ijansson/src -Ihttp-parser\"" >> $build_dir/.profile.d/libevent.sh
