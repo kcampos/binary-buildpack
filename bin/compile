@@ -25,7 +25,7 @@ ls $build_dir/vendor/event2
 # Update the PATH
 echo "Building runtime environment"
 mkdir -p $build_dir/.profile.d
-echo "export PATH=\"\$HOME/vendor/libevent-2.0.22-stable:\$HOME/vendor/event2:\$PATH\";" > $build_dir/.profile.d/libevent.sh
-echo "export LD_LIBRARY_PATH=\"$LD_LIBRARY_PATH:\$HOME/vendor/libevent-2.0.22-stable:\$HOME/vendor/event2\"" >> $build_dir/.profile.d/libevent.sh
+echo "export PATH=\"\$HOME/vendor/libevent-2.0.22-stable:\$HOME/vendor:\$PATH\";" > $build_dir/.profile.d/libevent.sh
+echo "export LD_LIBRARY_PATH=\"$LD_LIBRARY_PATH:\$HOME/vendor/libevent-2.0.22-stable:\$HOME/vendor\"" >> $build_dir/.profile.d/libevent.sh
 echo "export LDFLAGS=\"-levent -pthread\"" >> $build_dir/.profile.d/libevent.sh
-echo "export CFLAGS=\"-I\$HOME/vendor/libevent-2.0.22-stable -I\$HOME/vendor/event2 -O0 -ggdb -Wall -Wextra -I. -Ijansson/src -Ihttp-parser\"" >> $build_dir/.profile.d/libevent.sh
+echo "export CFLAGS=\"-I\$HOME/vendor/libevent-2.0.22-stable -I\$HOME/vendor -O0 -ggdb -Wall -Wextra -I. -Ijansson/src -Ihttp-parser\"" >> $build_dir/.profile.d/libevent.sh
